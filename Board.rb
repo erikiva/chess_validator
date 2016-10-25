@@ -6,18 +6,13 @@ class Board
 		line_num=7
 		if File.exist?(file) 
 			File.open(file).each do |line|
-				puts line
+				#puts line
   				fill_row line.chomp, line_num
   				line_num -= 1
   			end
   		end
 
-  		(0..7).each do |i|
-  			(0..7).each do |j|
-  				print "#{@grid[i][j]} "
-  			end
-  			print "\n"
-  		end
+      print_grid
 
   		# @grid.each do |row|
   		# 	row.each do |cell|
@@ -30,6 +25,15 @@ class Board
   		puts @grid[0][0]
 	end
 
+  def print_grid    
+      puts "Your current grid"
+  		(0..7).each do |i|
+  			(0..7).each do |j|
+  				print "#{@grid[i][j]} "
+  			end
+  			print "\n"
+  		end
+  end
 	def fill_row row, column
 		row.split.each_with_index do |piece, index|	
 			@grid[column][index] = piece.to_sym unless piece.include? '--'

@@ -4,17 +4,17 @@ class PieceMaker
 		colour = piece[0] == 'b'? 'black':'white'
 		case piece[1]
 		when 'R'
-			Rook.new piece[0]
+			Rook.new colour
 		when 'N'
-			Knight.new piece[0]
+			Knight.new colour
 		when 'B'
-			Bishop.new piece[0]
+			Bishop.new colour
 		when 'Q'
-			Queen.new piece[0]
+			Queen.new colour
 		when 'K'
-			King.new piece[0]
+			King.new colour
 		when 'P'
-			Pawn.new piece[0], position
+			Pawn.new colour, position
 		end
 	end
 end

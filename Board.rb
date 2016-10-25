@@ -14,22 +14,16 @@ class Board
 
       print_grid
 
-      # @grid.each do |row|
-      #   row.each do |cell|
-      #     print "#{cell} "
-      #   end
-      #   print "\n"
-      # end
-      print "#{@grid[0][7]}  #{@grid[0][6]}  #{@grid[0][5]}"
-      puts @grid[0][7]
-      puts @grid[0][0]
+      #print "#{@grid[0][7]}  #{@grid[0][6]}  #{@grid[0][5]}"
+      #puts @grid[0][7]
+      #puts @grid[0][0]
   end
 
   def print_grid
       puts "Your current grid"
-      (0..7).each do |i|
-        (0..7).each do |j|
-          print "#{@grid[i][j]} "
+      @grid.each do |row|
+        row.each do |cell|
+          print "#{cell} "
         end
         print "\n"
       end

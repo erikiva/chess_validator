@@ -24,7 +24,7 @@ class Piece
   attr_reader :colour, :allows_obstacles
 
   def initialize colour
-    puts "The colour is #{colour}"
+    #puts "The colour is #{colour}"
     @colour = colour
     @allows_obstacles = false
 

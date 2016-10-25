@@ -13,6 +13,7 @@ class Validator
     if File.exist?(file)
       File.open(file).each do |line|
           coordinates = line.chomp.split
+          print line.chomp + ' -> '
           puts validate_move(@board, coordinates[0], coordinates[1])
         end
       end

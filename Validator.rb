@@ -3,28 +3,28 @@ require './Board'
 require './Pieces'
 
 class Validator
-	attr_accessor :board
+  attr_accessor :board
 
-	def initialize  board
-		@board = board
-	end
+  def initialize  board
+    @board = board
+  end
 
-	def validate_list_file file
-		if File.exist?(file) 
-			File.open(file).each do |line|
-  				coordinates = line.chomp.split
-  				puts validate_move(@board, coordinates[0], coordinates[1])
-  			end
-  		end 
-	end
+  def validate_list_file file
+    if File.exist?(file)
+      File.open(file).each do |line|
+          coordinates = line.chomp.split
+          puts validate_move(@board, coordinates[0], coordinates[1])
+        end
+      end
+  end
 
-	def quick_validate origin, destination
-		puts validate_move @board, origin, destination
-	end
+  def quick_validate origin, destination
+    puts validate_move @board, origin, destination
+  end
 
-	def validate_move board, origin, destination
-		board.legal?(origin, destination) ? "LEGAL" : "ILLEGAL"
-	end
+  def validate_move board, origin, destination
+    board.legal?(origin, destination) ? "LEGAL" : "ILLEGAL"
+  end
 
 end
 
